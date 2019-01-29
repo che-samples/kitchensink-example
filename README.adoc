@@ -1,15 +1,17 @@
 include::../shared-doc/attributes.adoc[]
 
-= kitchensink-angularjs: Demonstrates AngularJS with JAX-RS
-:author: Pete Muir
+= kitchensink-jsp: Kitchensink with a JSP (JavaServer Pages) Front End
+:author: Elvadas Nono
 :level: Intermediate
-:technologies: AngularJS, CDI, JPA, EJB, JPA, JAX-RS, BV
+:technologies: JSP, JSTL, CDI, JPA, EJB, JAX-RS, BV
 
 [abstract]
-The `kitchensink-angularjs` quickstart demonstrates a {javaVersion} application using AngularJS with JAX-RS, CDI, EJB, JPA, and Bean Validation.
+The `kitchensink-jsp` quickstart demonstrates how to use JSP, JSTL, CDI, EJB, JPA, and Bean Validation in {productName}.
 
 :standalone-server-type: default
 :archiveType: war
+:uses-h2:
+:uses-ds-xml:
 
 //*************************************************
 // Shared CD and Product Release content
@@ -17,9 +19,10 @@ The `kitchensink-angularjs` quickstart demonstrates a {javaVersion} application 
 
 == What is it?
 
-The `kitchensink-angularjs` quickstart is a deployable Maven 3 project to help you get your foot in the door developing with AngularJS on {javaVersion} with {productNameFull}.
+The `kitchensink-jsp` quickstart is a deployable Maven 3 project and demonstrates how to create a compliant {javaVersion} application using JSP 2.0, EL 2.0, JSTL 1.2, CDI, EJB, JPA, and Bean Validation in {productNameFull}.
 
-This project is setup to allow you to create a compliant {javaVersion} application using CDI 1.2, EJB 3.2, JPA 2.1 and Bean Validation 1.1. It includes a persistence unit and some sample persistence and transaction code to introduce you to database access in enterprise Java.
+This example is based on the link:../kitchensink/README.adoc[kitchensink] quickstart, but recreates the presentation tier using JSP and JSTL instead of JSF features. It reuses all other components from the Member Registration template. It also reuses the persistence unit and some sample persistence and transaction code to help you with database access in enterprise Java.
+
 
 //*************************************************
 // Product Release content only
@@ -27,6 +30,9 @@ This project is setup to allow you to create a compliant {javaVersion} applicati
 
 ifndef::EAPCDRelease[]
 
+
+// Considerations for Use in a Production Environment
+include::../shared-doc/development-shortcuts.adoc[leveloffset=+1]
 // System Requirements
 include::../shared-doc/system-requirements.adoc[leveloffset=+1]
 // Use of {jbossHomeName}
@@ -36,45 +42,42 @@ include::../shared-doc/start-the-standalone-server.adoc[leveloffset=+1]
 // Build and Deploy the Quickstart
 include::../shared-doc/build-and-deploy-the-quickstart.adoc[leveloffset=+1]
 
-== Access the Application
+== Access the application
 
 The application will be running at the following URL: http://localhost:8080/{artifactId}/.
+
+== Server Log: Expected Warnings and Errors
+
+You will see the following warnings in the server log. You can ignore these warnings.
+
+[source,options="nowrap"]
+----
+WFLYJCA0091: -ds.xml file deployments are deprecated. Support may be removed in a future version.
+
+HHH000431: Unable to determine H2 database version, certain features may not work
+----
 
 // Undeploy the Quickstart
 include::../shared-doc/undeploy-the-quickstart.adoc[leveloffset=+1]
 // Run the Arquillian Tests
 include::../shared-doc/run-arquillian-tests.adoc[leveloffset=+1]
-// Run the Arquillian Functional Tests
-include::../shared-doc/run-arquillian-functional-tests.adoc[leveloffset=+1]
 // Run the Quickstart in Red Hat Developer Studio or Eclipse
 include::../shared-doc/run-the-quickstart-in-jboss-developer-studio.adoc[leveloffset=+1]
 
 // Additional Red Hat Developer Studio instructions
-NOTE: If you have not installed the https://github.com/angelozerr/angularjs-eclipse[AngularJS Eclipse plugin] into {JBDSProductName}, you may see one or more of the following warnings when you import this project. You can ignore these warnings.
+You may see the following warnings for the `index.jsp` file when you import this quickstart into {JBDSProductName}.
 
 [source,options="nowrap"]
 ----
-HTML Problem: Undefined attribute name (ng-app)
-HTML Problem: Undefined attribute name (ng-click)
-HTML Problem: Undefined attribute name (ng-disabled)
-HTML Problem: Undefined attribute name (ng-hide)
-HTML Problem: Undefined attribute name (ng-model)
-HTML Problem: Undefined attribute name (ng-pattern)
-HTML Problem: Undefined attribute name (ng-repeat)
-HTML Problem: Undefined attribute name (ng-show)
-HTML Problem: Undefined attribute name (ng-submit)
-HTML Problem: Undefined attribute name (ng-view)
+The tag handler class for "c:forEach" (org.apache.taglibs.standard.tag.rt.core.ForEachTag) was not found on the Java Build Path
+The tag handler class for "c:out" (org.apache.taglibs.standard.tag.rt.core.OutTag) was not found on the Java Build Path
 ----
 
-== Debug the Application
+You can ignore this warning as it does not impact building or deploying the quickstart in {JBDSProductName}. See https://issues.jboss.org/browse/JBIDE-22175[JBIDE-22175] for the latest updates on this issue.
 
-If you want to debug the source code or look at the Javadocs of any library in the project, run either of the following commands to pull them into your local repository. The IDE should then detect them.
+// Debug the Application
+include::../shared-doc/debug-the-application.adoc[leveloffset=+1]
 
-[source,options="nowrap"]
-----
-$ mvn dependency:sources
-$ mvn dependency:resolve -Dclassifier=javadoc
-----
 
 endif::[]
 
@@ -96,3 +99,4 @@ include::../shared-doc/cd-deploy-project.adoc[leveloffset=+1]
 // include::../shared-doc/cd-post-deployment-tasks.adoc[leveloffset=+1]
 
 endif::[]
+
