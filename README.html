@@ -5,8 +5,8 @@
 <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 1.5.6.1">
-<meta name="author" content="Elvadas Nono">
-<title>kitchensink-jsp: Kitchensink with a JSP (JavaServer Pages) Front End</title>
+<meta name="author" content="Pete Muir">
+<title>kitchensink-angularjs: Demonstrates AngularJS with JAX-RS</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /* Asciidoctor default stylesheet | MIT License | http://asciidoctor.org */
@@ -428,9 +428,9 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </head>
 <body class="article">
 <div id="header">
-<h1>kitchensink-jsp: Kitchensink with a JSP (JavaServer Pages) Front End</h1>
+<h1>kitchensink-angularjs: Demonstrates AngularJS with JAX-RS</h1>
 <div class="details">
-<span id="author" class="author">Elvadas Nono</span><br>
+<span id="author" class="author">Pete Muir</span><br>
 </div>
 </div>
 <div id="content">
@@ -438,7 +438,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="sectionbody">
 <div class="quoteblock abstract">
 <blockquote>
-The <code>kitchensink-jsp</code> quickstart demonstrates how to use JSP, JSTL, CDI, EJB, JPA, and Bean Validation in JBoss EAP.
+The <code>kitchensink-angularjs</code> quickstart demonstrates a Java EE 8 application using AngularJS with JAX-RS, CDI, EJB, JPA, and Bean Validation.
 </blockquote>
 </div>
 </div>
@@ -447,27 +447,10 @@ The <code>kitchensink-jsp</code> quickstart demonstrates how to use JSP, JSTL, C
 <h2 id="_what_is_it">What is it?</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The <code>kitchensink-jsp</code> quickstart is a deployable Maven 3 project and demonstrates how to create a compliant Java EE 8 application using JSP 2.0, EL 2.0, JSTL 1.2, CDI, EJB, JPA, and Bean Validation in JBoss Enterprise Application Platform Server.</p>
+<p>The <code>kitchensink-angularjs</code> quickstart is a deployable Maven 3 project to help you get your foot in the door developing with AngularJS on Java EE 8 with JBoss Enterprise Application Platform Server.</p>
 </div>
 <div class="paragraph">
-<p>This example is based on the <a href="../kitchensink/README.adoc">kitchensink</a> quickstart, but recreates the presentation tier using JSP and JSTL instead of JSF features. It reuses all other components from the Member Registration template. It also reuses the persistence unit and some sample persistence and transaction code to help you with database access in enterprise Java.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="considerations_for_use_in_a_production_environment">Considerations for Use in a Production Environment</h2>
-<div class="sectionbody">
-<div class="dlist">
-<dl>
-<dt class="hdlist1">H2 Database</dt>
-<dd>
-<p>This quickstart uses the H2 database included with JBoss Enterprise Application Platform Server 7.2. It is a lightweight, relational example datasource that is used for examples only. It is not robust or scalable, is not supported, and should NOT be used in a production environment.</p>
-</dd>
-<dt class="hdlist1">Datasource Configuration File</dt>
-<dd>
-<p>This quickstart uses a <code>*-ds.xml</code> datasource configuration file for convenience and ease of database configuration. These files are deprecated in JBoss EAP and should not be used in a production environment. Instead, you should configure the datasource using the Management CLI or Management Console. Datasource configuration is documented in the <a href="https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.2/html-single/configuration_guide/"><em>Configuration Guide</em></a>.</p>
-</dd>
-</dl>
+<p>This project is setup to allow you to create a compliant Java EE 8 application using CDI 1.2, EJB 3.2, JPA 2.1 and Bean Validation 1.1. It includes a persistence unit and some sample persistence and transaction code to introduce you to database access in enterprise Java.</p>
 </div>
 </div>
 </div>
@@ -544,7 +527,7 @@ For Windows, use the <code><em>EAP_HOME</em>\bin\standalone.bat</code> script.
 </ol>
 </div>
 <div class="paragraph">
-<p>This deploys the <code>kitchensink-jsp/target/kitchensink-jsp.war</code> to the running instance of the server.</p>
+<p>This deploys the <code>kitchensink-angularjs/target/kitchensink-angularjs.war</code> to the running instance of the server.</p>
 </div>
 <div class="paragraph">
 <p>You should see a message in the server log indicating that the archive deployed successfully.</p>
@@ -552,25 +535,10 @@ For Windows, use the <code><em>EAP_HOME</em>\bin\standalone.bat</code> script.
 </div>
 </div>
 <div class="sect1">
-<h2 id="_access_the_application">Access the application</h2>
+<h2 id="_access_the_application">Access the Application</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The application will be running at the following URL: <a href="http://localhost:8080/kitchensink-jsp/" class="bare">http://localhost:8080/kitchensink-jsp/</a>.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_server_log_expected_warnings_and_errors">Server Log: Expected Warnings and Errors</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>You will see the following warnings in the server log. You can ignore these warnings.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight nowrap"><code>WFLYJCA0091: -ds.xml file deployments are deprecated. Support may be removed in a future version.
-
-HHH000431: Unable to determine H2 database version, certain features may not work</code></pre>
-</div>
+<p>The application will be running at the following URL: <a href="http://localhost:8080/kitchensink-angularjs/" class="bare">http://localhost:8080/kitchensink-angularjs/</a>.</p>
 </div>
 </div>
 </div>
@@ -656,34 +624,122 @@ The Arquillian tests deploy the application, so make sure you undeploy the quick
 </div>
 </div>
 <div class="sect1">
+<h2 id="run_the_arquillian_functional_tests">Run the Arquillian Functional Tests</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This quickstart provides Arquillian functional tests. They are located under the  <code>functional-tests/</code> directory. Functional tests verify that your application behaves correctly from the user&#8217;s point of view and simulate clicking around the web page as a normal user would do.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+The Arquillian functional tests deploy the application, so make sure you undeploy the quickstart before you begin.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Follow these steps to run the functional tests.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><a href="#start_the_eap_standalone_server">Start the JBoss EAP server</a> as described above.</p>
+</li>
+<li>
+<p>Build the quickstart archive.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Open a terminal and navigate to the root directory of this quickstart.</p>
+</li>
+<li>
+<p>Build the quickstart archive using the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight nowrap"><code>$ mvn clean package</code></pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Navigate to the <code>functional-tests/</code> directory in this quickstart.</p>
+</li>
+<li>
+<p>Type the following command to run the <code>verify</code> goal with the <code>arq-remote</code> profile activated.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight nowrap"><code>$ mvn clean verify -Parq-remote</code></pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>You can also let Arquillian manage the JBoss EAP server by using the <code>arq-managed</code> profile, meaning the tests will start the server for you. This profile requires that you provide Arquillian with the location of the JBoss EAP server, either by setting the <code>JBOSS_HOME</code> environment variable, or by setting the <code>jbossHome</code> property in the <code>arquillian.xml</code> file.  For more information, see <a href="https://github.com/jboss-developer/jboss-developer-shared-resources/blob/master/guides/RUN_ARQUILLIAN_TESTS.adoc#run_the_arquillian_tests">Run the Arquillian Tests</a>.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
 <h2 id="run_the_quickstart_in_jboss_developer_studio_or_eclipse">Run the Quickstart in Red Hat JBoss Developer Studio or Eclipse</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>You can also start the server and deploy the quickstarts or run the Arquillian tests in Red Hat JBoss Developer Studio or from Eclipse using JBoss tools. For general information about how to import a quickstart, add a JBoss EAP server, and build and deploy a quickstart, see <a href="https://github.com/jboss-developer/jboss-developer-shared-resources/blob/master/guides/USE_JBDS.adoc#use_red_hat_jboss_developer_studio_or_eclipse_to_run_the_quickstarts">Use JBoss Developer Studio or Eclipse to Run the Quickstarts</a>.</p>
 </div>
-<div class="paragraph">
-<p>You may see the following warnings for the <code>index.jsp</code> file when you import this quickstart into Red Hat Developer Studio.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+If you have not installed the <a href="https://github.com/angelozerr/angularjs-eclipse">AngularJS Eclipse plugin</a> into Red Hat Developer Studio, you may see one or more of the following warnings when you import this project. You can ignore these warnings.
+</td>
+</tr>
+</table>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight nowrap"><code>The tag handler class for "c:forEach" (org.apache.taglibs.standard.tag.rt.core.ForEachTag) was not found on the Java Build Path
-The tag handler class for "c:out" (org.apache.taglibs.standard.tag.rt.core.OutTag) was not found on the Java Build Path</code></pre>
+<pre class="highlight nowrap"><code>HTML Problem: Undefined attribute name (ng-app)
+HTML Problem: Undefined attribute name (ng-click)
+HTML Problem: Undefined attribute name (ng-disabled)
+HTML Problem: Undefined attribute name (ng-hide)
+HTML Problem: Undefined attribute name (ng-model)
+HTML Problem: Undefined attribute name (ng-pattern)
+HTML Problem: Undefined attribute name (ng-repeat)
+HTML Problem: Undefined attribute name (ng-show)
+HTML Problem: Undefined attribute name (ng-submit)
+HTML Problem: Undefined attribute name (ng-view)</code></pre>
 </div>
-</div>
-<div class="paragraph">
-<p>You can ignore this warning as it does not impact building or deploying the quickstart in Red Hat Developer Studio. See <a href="https://issues.jboss.org/browse/JBIDE-22175">JBIDE-22175</a> for the latest updates on this issue.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="debug_the_application">Debug the Application</h2>
+<h2 id="_debug_the_application">Debug the Application</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>If you want to debug the source code of any library in the project, run the following command to pull the source into your local repository. The IDE should then detect it.</p>
+<p>If you want to debug the source code or look at the Javadocs of any library in the project, run either of the following commands to pull them into your local repository. The IDE should then detect them.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>$ mvn dependency:sources</pre>
+<pre class="highlight nowrap"><code>$ mvn dependency:sources
+$ mvn dependency:resolve -Dclassifier=javadoc</code></pre>
 </div>
 </div>
 </div>
