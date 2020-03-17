@@ -27,7 +27,7 @@
 <body>
       <h1>Welcome to JBoss AS 7!</h1>
 
-      <p>You have successfully deployed a Java EE 6 web application
+      <p>You have successfully deployed a Jakarta EE 6 web application
          on JBoss AS 7.
       </p>
 

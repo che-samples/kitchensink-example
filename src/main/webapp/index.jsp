@@ -21,7 +21,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-   <title>Java EE 6 Starter Application</title>
+   <title>Jakarta EE 6 Starter Application</title>
    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
    <!-- Here we include the css file  -->
    <link rel="stylesheet" type="text/css" href="resources/css/screen.css" />
@@ -40,7 +40,7 @@
             <li><a href="jboss.org/jbossas">JBoss AS 7 project
                   site</a></li>
             </ul>
-            <p>Learn about the Java EE 6 platform and the component
+            <p>Learn about the Jakarta EE 6 platform and the component
                model it provides.</p>
             <ul>
                <li><a
@@ -74,7 +74,7 @@
                      issue tracker</a></li>
             </ul>
             <p>Explore JavaServer Faces, the component-oriented UI
-               framework in Java EE 6.</p>
+               framework in Jakarta EE 6.</p>
             <ul>
                <li><a href="http://www.javaserverfaces.org">JSF
                      community site</a></li>
