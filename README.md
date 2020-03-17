@@ -1,4 +1,4 @@
-kitchensink-jsp: Example Using Multiple Java EE 6 Technologies with a JSP (JavaServer Pages) Front End
+kitchensink-jsp: Example Using Multiple Jakarta EE 6 Technologies with a JSP (JavaServer Pages) Front End
 ======================================================================================================
 Author: Elvadas Nono
 
@@ -6,8 +6,8 @@ What is it?
 -----------
 
 jboss-as-kitchensink-jsp is a deployable Maven 3 project to help you
-get your foot in the door developing with Java EE 6 on JBoss AS 7 or JBoss Enterprise Application Platform 6. This 
-project is setup to allow you to create a compliant Java EE 6 application 
+get your foot in the door developing with Jakarta EE 6 on JBoss AS 7 or JBoss Enterprise Application Platform 6. This 
+project is setup to allow you to create a compliant Jakarta EE 6 application 
 using *JSP 2.0* *EL 2.0* *JSTL 1.2* *CDI 1.0*, *EJB 3.1*, *JPA 2.0* and Bean Validation 1.0. 
 
 This project rebuilds the presentation tier of the kitchensink quickstart app
